@@ -1,9 +1,5 @@
 openai
-Ollama
 langchain
-langchain-ollama
+pyPDF2
 streamlit
 python-dotenv
-pyPDF2
-
--e .
