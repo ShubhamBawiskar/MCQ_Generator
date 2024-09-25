@@ -10,7 +10,7 @@ import PyPDF2
 import streamlit as st
 
 # Loading the json file
-with open(r"D:\MCQ_Generator\Response.json") as file:
+with open(r"Response.json") as file:
     RESPONSE_JSON = json.load(file)
 
 # print(RESPONSE_JSON) debugging
@@ -70,7 +70,7 @@ with st.form("user_inputs"):
                             df.index = df.index+1
                             st.table(df)
                             #Display the review in a text box as well
-                            st.text_area(label="Review", value=response["review"])
+                            # st.text_area(label="Review", value=response["review"])
                         else:
                             st.error("Error in the table data")
                     else:
