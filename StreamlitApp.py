@@ -61,17 +61,20 @@ with st.form("user_inputs"):
                 print(f"Completion Tokens:{cb.completion_tokens}")
                 print(f"Total Cost:{cb.total_cost}")
                 if isinstance(response, dict):
-                    #Extract the quiz data from the response
+                    # Extract the quiz data from the response
                     quiz = response.get("quiz", None)
                     if quiz is not None:
                         table_data = get_table_data(quiz)
-                        if table_data is not None:
+                        
+                        # Print to check table_data format
+                        print("Table Data:", table_data)
+
+                        # Check if table_data is in a valid format
+                        if isinstance(table_data, (list, dict)) and len(table_data) > 0:
                             df = pd.DataFrame(table_data)
-                            df.index = df.index+1
+                            df.index = df.index + 1
                             st.table(df)
-                            #Display the review in a text box as well
-                            # st.text_area(label="Review", value=response["review"])
-                        else:
-                            st.error("Error in the table data")
                     else:
-                        st.write(response)
+                        st.error("Invalid table data format for DataFrame.")
+                else:
+                    st.write(response)

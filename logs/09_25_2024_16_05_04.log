@@ -1,0 +1,2 @@
+[2024-09-25 16:05:29,130] 1038 httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+[2024-09-25 16:06:14,329] 1038 httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
